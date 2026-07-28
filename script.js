@@ -288,11 +288,17 @@ const demoReviews = [
     const html = photoFiles
       .map(
         (src) =>
-          `<div class="photo-slide"><img src="${src}" alt="Фотосессия" loading="lazy" /></div>`
+          `<div class="photo-slide"><img src="${src}" alt="Фотосессия" /></div>`
       )
       .join("");
 
     track.innerHTML = html + html;
+
+    // Force reflow to kick animation on mobile
+    void track.offsetWidth;
+    track.style.animation = "none";
+    void track.offsetWidth;
+    track.style.animation = "";
   }
 
   discoverPhotos();

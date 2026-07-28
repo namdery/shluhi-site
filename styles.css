@@ -568,8 +568,8 @@ h2 {
 .photos-carousel {
   position: relative;
   overflow: hidden;
-  width: calc(100vw - 2rem);
-  margin-left: calc(50% - 50vw + 1rem);
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
   padding: 3rem 0 4rem;
   transform: rotate(-3deg);
 }
@@ -601,10 +601,12 @@ h2 {
   width: max-content;
   animation: photos-marquee 24s linear infinite;
   will-change: transform;
+  -webkit-animation: photos-marquee 24s linear infinite;
 }
 
 .photos-track:hover {
   animation-play-state: running;
+  -webkit-animation-play-state: running;
 }
 
 .photo-slide {
@@ -1054,9 +1056,15 @@ h2 {
   }
 
   .photos-carousel {
-    width: calc(100vw - 1.25rem);
-    margin-left: calc(50% - 50vw + 0.625rem);
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
     padding: 2rem 0 3rem;
+    transform: rotate(-2deg);
+  }
+
+  .photos-track {
+    animation: photos-marquee 20s linear infinite;
+    -webkit-animation: photos-marquee 20s linear infinite;
   }
 
   .photo-slide {
